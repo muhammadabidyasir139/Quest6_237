@@ -65,4 +65,20 @@ fun FormSiswa(
             label = { Text("Alamat Lengkap") },
             singleLine = true
         )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Button(
+            modifier = Modifier.fillMaxWidth(),
+            enabled = txtAlamat.isNotEmpty(),
+            onClick = {
+                listData.add(txtNama)
+                listData.add(txtGender)
+                listData.add(txtAlamat)
+                onSubmitButtonClicked(listData)
+            }
+        ) {
+            Text(text = stringResource(id = R.string.submit))
+        }
+    }
 }

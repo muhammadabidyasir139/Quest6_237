@@ -1,13 +1,18 @@
 package com.example.viewmodel.view
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.compose.*
-import com.example.viewmodel.viewmodel.JenisJK
-import com.example.viewmodel.viewmodel.Navigasi
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.viewmodel.Navigasi
+import com.example.viewmodel.model.DataJk
 import com.example.viewmodel.viewmodel.SiswaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,12 +33,12 @@ fun SiswaApp(
         ) {
 
             // Halaman Form
-            composable(Navigasi.Formulir.name) {
+            composable(route = Navigasi.Formulir.name) {
 
-                val pilihanJK = JenisJK.map { it } // langsung map tanpa rename
+                val pilihanJk = DataJk.jenisK
 
                 FormSiswa(
-                    pilihanJK = pilihanJK,
+                    pilihanJk = pilihanJk,
                     onSubmitButtonClicked = { listData ->
                         viewModel.setSiswa(listData)
                         navController.navigate(Navigasi.Detail.name)
@@ -42,7 +47,7 @@ fun SiswaApp(
             }
 
             // Halaman Detail
-            composable(Navigasi.Detail.name) {
+            composable(route = Navigasi.Detail.name) {
 
                 TampilSiswa(
                     statusUiSiswa = uiState,

@@ -50,7 +50,7 @@ fun TampilSiswa(
                         fontSize = 16.sp
                     )
                     Divider(
-                        thickness = dimensionResource(id = R.dimen._1dp)
+                        thickness = dimensionResource(id = R.dimen.thickness_divider)
                     )
                 }
             }

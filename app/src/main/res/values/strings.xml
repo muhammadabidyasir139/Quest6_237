@@ -8,4 +8,5 @@
     <string name="alamat">Alamat</string>
     <string name="gender">jenis Kelamin</string>
     <string name="detail">Data Siswa</string>
+    <string name="data_siswa">Data Siswa</string>
 </resources>

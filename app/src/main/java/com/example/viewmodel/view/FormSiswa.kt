@@ -36,4 +36,24 @@ fun FormSiswa(
             label = { Text("Nama Lengkap") },
             singleLine = true
         )
+
+        Divider(thickness = dimensionResource(id = R.dimen._1dp))
+
+        pilihanJK.forEach { item ->
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .selectable(
+                        selected = txtGender == item,
+                        onClick = { txtGender = item }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RadioButton(
+                    selected = txtGender == item,
+                    onClick = { txtGender = item }
+                )
+                Text(text = item)
+            }
+        }
 }

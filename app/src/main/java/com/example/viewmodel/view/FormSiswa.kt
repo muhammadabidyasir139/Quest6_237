@@ -25,6 +25,15 @@ fun FormSiswa(
     var txtGender by remember { mutableStateOf(value = "") }
     var ListData: MutableList<String> = mutableListOf(txtNama,txtGender,txtAlamat)
 
-    Scaffold { modifier = Modifier,
-    topBar = { TopAppBar(title = {Text(text = stringResource(id = "Form Pendaftaran"), color = Color.White)}) }}
+    Column(
+        modifier = Modifier.padding(20.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+
+        OutlinedTextField(
+            value = txtNama,
+            onValueChange = { txtNama = it },
+            label = { Text("Nama Lengkap") },
+            singleLine = true
+        )
 }

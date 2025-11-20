@@ -24,4 +24,12 @@ fun TampilSiswa(
             modifier = Modifier
                 .padding(padding)
                 .padding(20.dp)
-        )
+        ){
+
+            items.forEach { (label, value) ->
+                Column {
+                    Text(text = label.uppercase(), fontSize = 16.sp)
+                    Text(text = value, fontSize = 16.sp)
+                    Divider(thickness = dimensionResource(id = R.dimen._1dp))
+                }
+            }

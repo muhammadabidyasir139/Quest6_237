@@ -33,3 +33,11 @@ fun TampilSiswa(
                     Divider(thickness = dimensionResource(id = R.dimen._1dp))
                 }
             }
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Button(onClick = onBackButtonClicked) {
+                Text(text = stringResource(id = R.string.back))
+            }
+        }
+    }
+    }

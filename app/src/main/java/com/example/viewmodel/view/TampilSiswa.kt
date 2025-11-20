@@ -12,3 +12,16 @@ fun TampilSiswa(
         "Jenis Kelamin" to statusUiSiswa.gender,
         "Alamat" to statusUiSiswa.alamat
     )
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.data_siswa)) }
+            )
+        }
+    ) { padding ->
+
+        Column(
+            modifier = Modifier
+                .padding(padding)
+                .padding(20.dp)
+        )

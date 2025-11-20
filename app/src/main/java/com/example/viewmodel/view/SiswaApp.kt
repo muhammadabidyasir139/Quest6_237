@@ -5,4 +5,9 @@ package com.example.viewmodel.view
 
 fun SiswaApp(
     viewModel:SiswaViewModel = SiswaViewModel()
-)
+){
+    val uiState by viewModel.statusUI.collectAsState()
+    val navController = rememberNavController()
+    val context = LocalContext.current
+
+}

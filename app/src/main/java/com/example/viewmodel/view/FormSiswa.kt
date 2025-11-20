@@ -56,4 +56,13 @@ fun FormSiswa(
                 Text(text = item)
             }
         }
+
+        Divider(thickness = dimensionResource(id = R.dimen._1dp))
+
+        OutlinedTextField(
+            value = txtAlamat,
+            onValueChange = { txtAlamat = it },
+            label = { Text("Alamat Lengkap") },
+            singleLine = true
+        )
 }
